@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Chai Selection
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto p-8">
+  <!-- Page Header -->
+  <h1 class="text-4xl font-semibold  text-orange-600 mb-8 text-center animate-bounce">OUR OFFERINGS</h1>
+
+  <!-- Chai Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    {% for chai in chais %}
+    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out p-6">
+      
+      <!-- Chai Image -->
+      <div class="mb-4">
+        <img class="rounded-lg w-full h-48 object-cover shadow-md" src="{{ chai.image.url }}" alt="{{ chai.name }}">
+      </div>
+
+      <!-- Chai Details -->
+      <h3 class="text-xl font-semibold text-blue-900 mb-2">{{ chai.name }}</h3>
+
+      <!-- Price in Pill Shape with Animation -->
+      <p class="mb-4">
+        <span class="px-3 py-1 rounded-full bg-orange-500 text-white text-sm font-bold animate-pulse shadow-md">
+          ₹{{ chai.price|default:"Price not available" }}
+        </span>
+      </p>
+
+      <!-- Chai Type Button -->
+      <a href="{% url 'chai_detail' chai.id %}" class="block">
+        <button
+          type="button"
+          class="inline-flex items-center justify-center w-full px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-200 ease-in-out"
+        >
+          <span>{{ chai.name}}</span>
+        </button>
+      </a>
+    </div>
+    {% endfor %}
+    
+  </div>
+</div>
+{% endblock %}

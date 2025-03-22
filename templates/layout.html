@@ -1,0 +1,55 @@
+{% load static tailwind_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {% block title %}
+    Tea Shop
+    {% endblock %}
+  </title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  {% tailwind_css %}
+</head>
+<body class="bg-cover bg-center" style="background-image: url('{% static 'chai/images/tea-shop-bg.jpg' %}');">
+
+
+<!-- Navigation Bar -->
+<nav class="bg-white bg-opacity-80 backdrop-blur-sm shadow-md fixed top-0 left-0 right-0 z-10 rounded-3xl m-3">
+  <div class="container mx-auto flex items-center justify-between px-6 py-4">
+    
+    <!-- Logo and Shop Name -->
+    <div class="flex items-center space-x-2">
+      <img src="{% static 'chai/images/logo.png' %}" alt="Logo" class="h-12 w-auto rounded-full shadow-lg object-cover">
+      <span class="text-2xl font-bold text-orange-700 tracking-wide">Kolkata</span>
+    </div>
+    
+    <!-- Navigation Links -->
+    <div class="space-x-8">
+      <a href="{% url 'home' %}" class="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">Home</a>
+      <a href="{% url 'about' %}" class="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">About</a>
+      <a href="{% url 'contact' %}" class="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">Contact</a>
+      <a href="{% url 'chai_stores' %}" class="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">Locate our Stores</a>
+    </div>
+    
+  </div>
+</nav>
+
+
+      
+      <!-- Placeholder for navigation links (optional) -->
+      <div class="hidden md:flex space-x-6">
+        <!-- Links can go here if needed in the future -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container mx-auto pt-20 px-6">
+    {% block content %}{% endblock %}
+  </div>
+
+</body>
+</html>

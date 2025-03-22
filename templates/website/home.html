@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto p-8 pt-20">
+  
+  <!-- Hero Section -->
+  <section class="text-center mb-12">
+    <h2 class="text-5xl font-bold text-orange-600 mb-4 animate-fadeIn">WELCOME TO TEA JUNCTION</h2>
+    <h2 class="text-lg font-extrabold text-orange-800">Discover the art of tea, where every cup is a story.</h2>
+  </section>
+
+  <!-- Cards Section -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    <!-- Traditional Teas Card -->
+<div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 duration-300 p-6 animate-slideUp">
+  <img src="{% static 'chai/images/traditional-teas.jpg' %}" alt="Traditional Teas" class="rounded-t-lg w-full h-48 object-cover mb-4">
+  <h3 class="text-2xl font-semibold text-orange-600 mb-2">Traditional Teas</h3>
+  <p class="text-gray-600">Experience the classic flavors and heritage of traditional teas crafted with love.</p>
+
+  <!-- Explore More Button with link to all_chai -->
+  <a href="{% url 'all_chai' %}">
+    <button class="mt-4 w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-md transition duration-300">
+      Explore More
+    </button>
+  </a>
+</div>
+
+
+    <!-- Exotic Blends Card -->
+    <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 duration-300 p-6 animate-slideUp">
+      <img src="{% static 'chai/images/exotic-blends.jpg' %}" alt="Exotic Blends" class="rounded-t-lg w-full h-48 object-cover mb-4">
+      <h3 class="text-2xl font-semibold text-blue-600 mb-2">Exotic Blends</h3>
+      <p class="text-gray-600">Indulge in our unique, aromatic blends inspired by global flavors and crafted locally.</p>
+      <button class="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md transition duration-300">
+        Taste Adventure
+      </button>
+    </div>
+
+    <!-- Special Offers Card -->
+    <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 duration-300 p-6 animate-slideUp">
+      <img src="{% static 'chai/images/special-offers.jpg' %}" alt="Special Offers" class="rounded-t-lg w-full h-48 object-cover mb-4">
+      <h3 class="text-2xl font-semibold text-green-600 mb-2">Special Offers</h3>
+      <p class="text-gray-600">Check out our seasonal specials and discounts, crafted for tea enthusiasts like you.</p>
+      <button class="mt-4 w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-md transition duration-300">
+        View Offers
+      </button>
+    </div>
+    
+  </div>
+</div>
+
+{% endblock %}
