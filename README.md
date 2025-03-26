@@ -1,6 +1,6 @@
 # TeaStore Using Django
 
-TeaStore Django is a robust and user-friendly e-commerce web application built with the Django framework. This application provides an online platform for browsing, purchasing, and managing a variety of teas, complete with user authentication, a product catalog, a shopping cart, and order management features.
+TeaStore Django is a  web application built with the Django framework. This application provides an online platform for browsing, and managing a variety of teas, complete with user authentication, and a product catalog.
 
 ## Table of Contents
 
